@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pesquisa de Estilo de Vida Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pesquisa de Estilo de Vida e Hábitos</h1>
+        <p class="description">Responda às questões abaixo sobre seus hábitos de saúde física e estilo de vida. A precisão de suas respostas é muito importante.</p>
+
+        <form id="lifestyleForm">
+            <section class="form-section">
+                <h2>Seção 1: Informações Pessoais e Saúde Geral</h2>
+                
+                <div class="form-group">
+                    <label for="name">Nome (Opcional):</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="age">Idade:</label>
+                    <input type="number" id="age" name="age" min="15" required>
+                </div>
+                <div class="form-group">
+                    <label>Como você avalia seu estado geral de saúde?</label>
+                    <select id="health" name="health" required>
+                        <option value="">Selecione</option>
+                        <option value="excellent">Excelente</option>
+                        <option value="good">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="poor">Ruim</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Você possui alguma condição crônica de saúde (ex: diabetes, hipertensão)?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="chronicYes" name="chronicCondition" value="Sim" required>
+                        <label for="chronicYes">Sim</label>
+                        <input type="radio" id="chronicNo" name="chronicCondition" value="Não">
+                        <label for="chronicNo">Não</label>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="form-section">
+                <h2>Seção 2: Atividade Física e Exercício</h2>
+                
+                <div class="form-group">
+                    <label for="practiceExercise">Você pratica exercícios físicos de forma regular (pelo menos 1 vez/semana)?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="exerciseYes" name="practiceExercise" value="Sim" required>
+                        <label for="exerciseYes">Sim</label>
+                        <input type="radio" id="exerciseNo" name="practiceExercise" value="Não">
+                        <label for="exerciseNo">Não</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency">Se sim, quantas vezes por semana, em média?</label>
+                    <input type="number" id="frequency" name="frequency" min="0" max="7" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="duration">Em média, quantos minutos dura cada sessão de exercício?</label>
+                    <input type="number" id="duration" name="duration" min="10" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Qual o principal tipo de exercício que você pratica?</label>
+                    <select id="exerciseType" name="exerciseType" required>
+                        <option value="">Selecione</option>
+                        <option value="strength">Treinamento de Força (Musculação, CrossFit)</option>
+                        <option value="cardio">Aeróbico (Corrida, Natação, Pedalada)</option>
+                        <option value="flex">Flexibilidade/Equilíbrio (Ioga, Pilates)</option>
+                        <option value="sport">Esportes Coletivos</option>
+                        <option value="mixed">Misto (Vários tipos)</option>
+                        <option value="none">Não pratico</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Em um dia comum, quanto tempo você passa sentado/deitado (excluindo o sono)?</label>
+                    <select id="sedentaryTime" name="sedentaryTime" required>
+                        <option value="">Selecione</option>
+                        <option value="4h">Menos de 4 horas</option>
+                        <option value="4-7h">4 a 7 horas</option>
+                        <option value="8-11h">8 a 11 horas</option>
+                        <option value="12h+">12 horas ou mais</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Qual é a sua principal barreira para *manter* a rotina de exercícios?</label>
+                    <select id="exerciseBarrier" name="exerciseBarrier" required>
+                        <option value="">Selecione</option>
+                        <option value="time">Falta de tempo</option>
+                        <option value="energy">Cansaço/Falta de energia</option>
+                        <option value="motivation">Falta de motivação</option>
+                        <option value="cost">Custo financeiro</option>
+                        <option value="health_issue">Problemas de saúde/lesões</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você utiliza caminhada/bicicleta como meio de transporte diário (pelo menos 10 minutos)?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="activeTransportYes" name="activeTransport" value="Sim" required>
+                        <label for="activeTransportYes">Sim</label>
+                        <input type="radio" id="activeTransportNo" name="activeTransport" value="Não">
+                        <label for="activeTransportNo">Não</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Seção 3: Nutrição e Dieta</h2>
+                
+                <div class="form-group">
+                    <label for="fruitVeggie">Em média, quantas porções de frutas/vegetais você consome por dia?</label>
+                    <select id="fruitVeggie" name="fruitVeggie" required>
+                        <option value="">Selecione</option>
+                        <option value="0">0 porções</option>
+                        <option value="1-2">1 a 2 porções</option>
+                        <option value="3-4">3 a 4 porções</option>
+                        <option value="5+">5 ou mais porções</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="processedFood">Qual a frequência de consumo de alimentos ultraprocessados (ex: salgadinhos, refrigerantes, fast-food)?</label>
+                    <select id="processedFood" name="processedFood" required>
+                        <option value="">Selecione</option>
+                        <option value="daily">Diariamente</option>
+                        <option value="several_week">Várias vezes por semana</option>
+                        <option value="once_week">Uma vez por semana</option>
+                        <option value="rarely">Raramente ou nunca</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eatOutFrequency">Quantas vezes por semana, em média, você faz refeições principais fora de casa?</label>
+                    <input type="number" id="eatOutFrequency" name="eatOutFrequency" min="0" max="21" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="water">Você se hidrata adequadamente (ingere água suficiente)? (1=Raramente, 5=Sempre)</label>
+                    <input type="range" id="water" name="water" min="1" max="5" value="3" required>
+                    <div class="range-labels">
+                        <span>1 (Raramente)</span>
+                        <span>5 (Sempre)</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você costuma fazer café da manhã?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="breakfastYes" name="breakfast" value="Sim" required>
+                        <label for="breakfastYes">Sim</label>
+                        <input type="radio" id="breakfastNo" name="breakfast" value="Não">
+                        <label for="breakfastNo">Não</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você procura equilibrar a ingestão de proteínas, carboidratos e gorduras na maioria das refeições?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="balancedYes" name="balancedDiet" value="Sim" required>
+                        <label for="balancedYes">Sim</label>
+                        <input type="radio" id="balancedNo" name="balancedDiet" value="Não">
+                        <label for="balancedNo">Não</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Seção 4: Sono, Estresse e Outros Hábitos</h2>
+                
+                <div class="form-group">
+                    <label for="sleepHours">Em média, quantas horas de sono você tem por noite?</label>
+                    <input type="number" id="sleepHours" name="sleepHours" min="4" max="12" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sleepQuality">Como você avalia a qualidade do seu sono (se sente descansado)? (1=Muito ruim, 5=Muito boa)</label>
+                    <input type="range" id="sleepQuality" name="sleepQuality" min="1" max="5" value="3" required>
+                    <div class="range-labels">
+                        <span>1 (Ruim)</span>
+                        <span>5 (Boa)</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Com que frequência você tem dificuldade para iniciar ou manter o sono?</label>
+                    <select id="sleepDifficulty" name="sleepDifficulty" required>
+                        <option value="">Selecione</option>
+                        <option value="never">Nunca</option>
+                        <option value="monthly">1-2 vezes por mês</option>
+                        <option value="weekly">1-2 vezes por semana</option>
+                        <option value="frequently">3 ou mais vezes por semana</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stressLevel">Qual seu nível de estresse percebido na última semana? (1=Baixo, 5=Muito Alto)</label>
+                    <input type="range" id="stressLevel" name="stressLevel" min="1" max="5" value="3" required>
+                    <div class="range-labels">
+                        <span>1 (Baixo)</span>
+                        <span>5 (Muito Alto)</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="leisureTime">Você dedica tempo diariamente para relaxamento ou lazer (não digital)?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="leisureYes" name="leisureTime" value="Sim" required>
+                        <label for="leisureYes">Sim</label>
+                        <input type="radio" id="leisureNo" name="leisureTime" value="Não">
+                        <label for="leisureNo">Não</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você fuma atualmente?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="smokeYes" name="smoke" value="Sim" required>
+                        <label for="smokeYes">Sim</label>
+                        <input type="radio" id="smokeNo" name="smoke" value="Não">
+                        <label for="smokeNo">Não</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Com que frequência você consome bebidas alcoólicas?</label>
+                    <select id="alcoholFrequency" name="alcoholFrequency" required>
+                        <option value="">Selecione</option>
+                        <option value="never">Nunca</option>
+                        <option value="monthly">Mensalmente ou menos</option>
+                        <option value="weekly">Semanalmente (1-3 vezes)</option>
+                        <option value="daily">Diariamente</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Com que frequência você realiza exames de saúde e check-ups preventivos?</label>
+                    <select id="checkupFrequency" name="checkupFrequency" required>
+                        <option value="">Selecione</option>
+                        <option value="yearly">Anualmente</option>
+                        <option value="2-3years">A cada 2-3 anos</option>
+                        <option value="rarely">Raramente</option>
+                        <option value="never">Nunca</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você se sente socialmente conectado(a) e com apoio familiar/amigos?</label>
+                    <input type="range" id="socialSupport" name="socialSupport" min="1" max="5" value="3" required>
+                    <div class="range-labels">
+                        <span>1 (Nada Conectado)</span>
+                        <span>5 (Totalmente Conectado)</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você está satisfeito(a) com seu peso e forma corporal atual?</label>
+                    <input type="range" id="weightSatisfaction" name="weightSatisfaction" min="1" max="5" value="3" required>
+                    <div class="range-labels">
+                        <span>1 (Muito Insatisfeito)</span>
+                        <span>5 (Muito Satisfeito)</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="screenTime">Em média, quantas horas por dia você passa em frente a telas (celular, PC, TV), fora do trabalho/estudos?</label>
+                    <select id="screenTime" name="screenTime" required>
+                        <option value="">Selecione</option>
+                        <option value="1h">Menos de 1 hora</option>
+                        <option value="1-2h">1 a 2 horas</option>
+                        <option value="3-4h">3 a 4 horas</option>
+                        <option value="5h+">5 horas ou mais</option>
+                    </select>
+                </div>
+                
+            </section>
+
+            <button type="submit" class="submit-btn">Enviar Pesquisa</button>
+            <p id="message" class="hidden"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/server.js"></script>
+</body>
+</html>
